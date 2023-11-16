@@ -18,4 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('dashboard',[AdminController::class,'dashboard']);
+// route::get('dashboard',[AdminController::class,'dashboard']);
+
+// route::get('login',[AdminController::class,'signin']);
+
+route::prefix('adminspp')->group(function(){
+    Route::get('/',[AdminController::class,'dashboard']);
+        route::get('/loginadmin',[AdminController::class,'loginadmin']);
+        route::post('/loginadmin',[AdminController::class,'cekloginadmin']);
+        route::get('logoutadmin',[AdminController::class,'logoutadmin']);
+    });
+    route::get('registrasiadmin',[AdminController::class,'registrasiadmin']);
