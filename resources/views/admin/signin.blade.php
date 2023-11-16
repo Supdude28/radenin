@@ -18,18 +18,19 @@
   <article class="sign-up">
     <h1 class="sign-up__title">Welcome back!</h1>
     <p class="sign-up__subtitle">Sign in to your account to continue</p>
-    <form class="sign-up-form form" action="" method="">
+    <form class="sign-up-form form" action="{{url('adminspp/loginadmin')}}" method="POST">
+      @csrf
       <label class="form-label-wrapper">
         <p class="form-label">Username</p>
-        <input class="form-input" type="email" placeholder="Enter your username" required>
+        <input class="form-input" type="text" name="username" placeholder="Enter your username" >
       </label>
       <label class="form-label-wrapper">
         <p class="form-label">Password</p>
-        <input class="form-input" type="password" placeholder="Enter your password" required>
+        <input class="form-input" type="password" name="password" placeholder="Enter your password" required>
       </label>
       <a class="link-info forget-link" href="##">Forgot your password?</a>
       
-      {{-- <button class="form-btn primary-default-btn transparent-btn">Sign in</button> --}}
+      <button class="form-btn primary-default-btn transparent-btn">Sign in</button>
       {{-- <a class="link-info forget-link" href="{{url('registrasiadmin')}}">"Registrasi</a> --}}
     </form>
   </article>

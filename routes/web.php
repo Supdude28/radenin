@@ -29,3 +29,6 @@ route::prefix('adminspp')->group(function(){
         route::get('logoutadmin',[AdminController::class,'logoutadmin']);
     });
     route::get('registrasiadmin',[AdminController::class,'registrasiadmin']);
+    route::get('kelas',[AdminController::class,'kelas']);
+    route::get('pembayaran',[AdminController::class,'pembayaran']);
+    route::get('kantambah',[AdminController::class,'tambahi']);

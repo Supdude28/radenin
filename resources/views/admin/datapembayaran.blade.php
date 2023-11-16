@@ -5,12 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Dashboard | Dashboard</title>
+  <title>Data Pembayaran | SPP</title>
   <!-- Favicon -->
   <link rel="stylesheet" href="/assets/cssboots/bootstrap.css">
   <link rel="shortcut icon" href="/assets/img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+
   <link rel="stylesheet" href="/assets/css/style.min.css">
+  <style>
+    .bruh{
+        margin-right: 50px;
+    }
+  </style>
 </head>
 
 <body>
@@ -39,7 +46,7 @@
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                    <a href="{{url('adminspp')}}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -51,10 +58,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">Data Pembayaran</a>
+                            <a class="active" href="posts.html">Data Pembayaran</a>
                         </li>
                         <li>
-                            <a href="new-post.html">tambah Pembayaran</a>
+                            <a href="{{url('kantambah')}}">tambah Pembayaran</a>
                         </li>
                     </ul>
                 </li> 
@@ -63,9 +70,6 @@
             </ul>
             <h1 class="system-menu__title">system</h1>
             <ul class="sidebar-body-menu">
-              <li>
-                <a class="" href="/"><span class="icon document" aria-hidden="true"></span>Kelas</a>
-            </li>
                 <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon user-3" aria-hidden="true"></span>Siswa
@@ -77,6 +81,20 @@
                     <ul class="cat-sub-menu">
                         <li>
                             <a href="users-01.html">Siswa-01</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon document" aria-hidden="true"></span>Kelas
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a class="" href="{{url('kelas')}}">Data Kelas</a>
                         </li>
                     </ul>
                 </li>
@@ -192,7 +210,7 @@
             </a></li>
           <li><a class="danger" href="##">
               <i data-feather="log-out" aria-hidden="true"></i>
-              <span>Login</span>
+              <span>Logout</span>
             </a></li>
         </ul>
       </div>
@@ -202,7 +220,7 @@
     <!-- ! Main -->
     <main class="main users chart-page" id="skip-target">
       <div class="container">
-        <h2 class="main-title">Dashboard</h2>
+        {{-- <h2 class="main-title">Dashboard</h2>
         <div class="row stat-cards">
           <div class="col-md-6 col-xl-3">
             <article class="stat-cards-item">
@@ -219,6 +237,7 @@
                   Last month
                 </p>
               </div>
+              
             </article>
           </div>
           <div class="col-md-6 col-xl-3">
@@ -237,28 +256,28 @@
                 </p>
               </div>
             </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-
-          </div>
-        </div>
+          </div> --}}
         <div class="row">
-          <div class="col-lg-9">
-            <div>
-            </div>
-            <div class="oyaaa card">
+          
+            
+            <div class="bruh card">
             <div class="users-table table-wrapper">
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">NIK</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Total Pembayaran</th>
-                    <th scope="col">Telpon</th>
-                  </tr>                     
+                    <th scope="col">Id Pembayaran</th>
+                    <th scope="col">Id Petugas</th>                      
+                    <th scope="col">Nisn</th>
+                    <th scope="col">Tanggal Bayar</th>
+                    <th scope="col">Tahun Bayar</th>
+                    <th scope="col">Bulan Bayar</th>
+                    <th scope="col">Jumlah Bayar</th>
+                </tr>                     
                 </thead>
                 <tbody>
-
+                    <tr>
+                        
+                    </tr>
                 </tbody>
               </table>
             </div>

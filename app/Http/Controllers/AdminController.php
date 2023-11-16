@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
 use App\Models\Petugas;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function dashboard(){
-        return view('admin.dashboard');
+        $din = new Pembayaran();
+        $din = new Siswa();
+        return view('admin.dashboard',['ui'=>$din->all()]);
+        
     }
 
     public function loginadmin(){
@@ -27,10 +32,21 @@ class AdminController extends Controller
                 'username'=> $request->input('username'),
                 'password'=> $request->input('password')
             ]);
-            return redirect('/dashboard');
+            return redirect('/adminspp');
 
         }
         
         return back();
     }
+    public function kelas(Request $request){
+        return view('admin.kelas');
+    }
+    public function pembayaran(Request $request){
+        return view('admin.datapembayaran');
+    }
+
+    public function tambahi(Request $request){
+        return view('admin.tambahpem');
+    }
+    
 }

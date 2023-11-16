@@ -5,13 +5,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Dashboard | SPP</title>
+  <title>Data | Kelas</title>
   <!-- Favicon -->
   <link rel="stylesheet" href="/assets/cssboots/bootstrap.css">
   <link rel="shortcut icon" href="/assets/img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
   <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+
   <link rel="stylesheet" href="/assets/css/style.min.css">
+  <style>
+    .bruh{
+        margin-right: 50px;
+    }
+  </style>
 </head>
 
 <body>
@@ -40,7 +47,7 @@
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="{{url('adminspp')}}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                    <a href="{{url('adminspp')}}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -79,18 +86,18 @@
                     </ul>
                 </li>
                 <li>
-                  <a class="show-cat-btn" href="##">
-                      <span class="icon document" aria-hidden="true"></span>Kelas
-                      <span class="category__btn transparent-btn" title="Open list">
-                          <span class="sr-only">Open list</span>
-                          <span class="icon arrow-down" aria-hidden="true"></span>
-                      </span>
-                  </a>
-                  <ul class="cat-sub-menu">
-                      <li>
-                          <a href="{{url("kelas")}}">Data Kelas</a>
-                      </li>
-                  </ul>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon document" aria-hidden="true"></span>Kelas
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a class="active" href="posts.html">Data Kelas</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
@@ -98,7 +105,6 @@
             </ul>
         </div>
     </div>
-    
     <div class="sidebar-footer">
         <a href="##" class="sidebar-user">
             <span class="sidebar-user-img">
@@ -215,7 +221,7 @@
     <!-- ! Main -->
     <main class="main users chart-page" id="skip-target">
       <div class="container">
-        <h2 class="main-title">Dashboard</h2>
+        {{-- <h2 class="main-title">Dashboard</h2>
         <div class="row stat-cards">
           <div class="col-md-6 col-xl-3">
             <article class="stat-cards-item">
@@ -251,42 +257,26 @@
                 </p>
               </div>
             </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9">
-            <div>
-            </div>
-            <div class="oyaaa card ">
-              <table class="table table-hover px-3">
+          </div> --}}
+          <div class="bruh card">
+            <div class="users-table table-wrapper">
+              <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Nisn</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Total Pembayaran</th>
-                    <th scope="col">Telpon</th>
-                  </tr>                     
+                    <th scope="col">Id</th>
+                    <th scope="col">Nama Kelas</th>                      
+                    <th scope="col">Kompetensi Keahlian</th>
+                </tr>                     
                 </thead>
                 <tbody>
                     <tr>
-                      @foreach ($ui as $item)
-                          <tr>
-                            <td>{{$item->nisn}}</td>
-                            <td>{{$item->nama}}</td>
-                            <td>{{$item->jumlah_bayar}}</td>
-                            <td>{{$item->no_telp}}</td>
-                          </tr>
-                      @endforeach
+                        
                     </tr>
                 </tbody>
               </table>
             </div>
           </div>
           </div>
-          
     <!-- ! Footer -->
     <footer class="footer">
   <div class="container footer--flex">
