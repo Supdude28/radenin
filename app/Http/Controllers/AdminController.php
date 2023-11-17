@@ -42,10 +42,12 @@ class AdminController extends Controller
         return view('admin.kelas');
     }
     public function pembayaran(Request $request){
-        return view('admin.datapembayaran');
+        $din = new Pembayaran();
+        return view('admin.datapembayaran',['au'=>$din->all()]);
     }
 
     public function tambahi(Request $request){
+        
         return view('admin.tambahpem');
     }
     

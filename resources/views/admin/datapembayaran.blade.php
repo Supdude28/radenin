@@ -79,10 +79,12 @@
                         </span>
                     </a>
                     <ul class="cat-sub-menu">
-                        <li>
-                            <a href="users-01.html">Siswa-01</a>
-                        </li>
-                    </ul>
+                      <li>
+                          <a href="#">
+                            <th>Siswa</th>
+                          </a>
+                      </li>
+                  </ul>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -276,7 +278,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        
+                        @foreach ($au as $item)
+                            <th>{{$item->id_pembayaran}}</th>
+                            <th>{{$item->id_petugas}}</th>
+                            <th>{{$item->nisn}}</th>
+                            <th>{{$item->tanggal_bayar}}</th>
+                            <th>{{$item->tahun_dibayar}}</th>
+                            <th>{{$item->bulan_dibayar}}</th>
+                            <th>{{$item->jumlah_bayar}}</th>
+                        @endforeach
                     </tr>
                 </tbody>
               </table>

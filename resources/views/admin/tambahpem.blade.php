@@ -18,8 +18,8 @@
   <div class="layer"></div>
 <main class="page-center">
   <article class="sign-up">
-    <h1 class="sign-up__title">Get started</h1>
-    <p class="sign-up__subtitle">Start creating the best possible user experience for you customers</p>
+    <h1 class="sign-up__title">Tambah Pembayaran</h1>
+    <p class="sign-up__subtitle">Jujur lah dengan keadaan yang sekarang</p>
     <form class="sign-up-form form" action="" method="">
       <label class="form-label-wrapper">
         <p class="form-label">Nisn</p>
