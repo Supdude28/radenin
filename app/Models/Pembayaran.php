@@ -12,4 +12,8 @@ class Pembayaran extends Model
     protected $primaryKey = 'id_pembayaran';
     public $incrementing = false;
     protected $guarded = [];
+    
+    public function siswa(){
+        return $this->belongsTo(Siswa::class);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pembayaran;
 use App\Models\Petugas;
 use App\Models\Siswa;
+use App\Models\Spp;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,6 +14,7 @@ class AdminController extends Controller
         $din = new Pembayaran();
         $din = new Siswa();
         return view('admin.dashboard',['ui'=>$din->all()]);
+
         
     }
 
@@ -49,6 +51,19 @@ class AdminController extends Controller
     public function tambahi(Request $request){
         
         return view('admin.tambahpem');
+    }
+    public function sppsiswa(){
+        $din = new Spp();
+        return view('admin.spp',['ai'=>$din->all()]);
+    }
+    public function datasiswa(Request $request){
+        $din = new Siswa();
+        return view('admin.datasiswa',['ai'=>$din->all()]);
+    }
+
+    public function tambahclas(Request $request){
+        
+        return view('admin.tambahclas');
     }
     
 }

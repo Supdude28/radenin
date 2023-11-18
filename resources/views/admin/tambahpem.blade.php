@@ -25,10 +25,8 @@
         <p class="form-label">Nisn</p>
         <input class="form-input" type="text" name="" placeholder="Masukan Nisn" required>
       </label>
-      <label class="form-label-wrapper">
-        <p class="form-label">Tanggal Bayar</p>
-        <input class="form-input" type="date" name="" required>
-      </label>
+      <label for="tanggal_bayar" class="form-label">Tanggal Pembayaran</label>
+      <input type="date" class="form-control" name="tanggal_bayar" id="tanggal_bayar" placeholder="tanggal_pengaduan">
       <label class="form-label-wrapper">
         <p class="form-label">Tahun</p>
         <input class="form-input" type="text" name="" placeholder="Masukan Tahun Pembayaran" required>

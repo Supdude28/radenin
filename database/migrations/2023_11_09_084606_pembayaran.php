@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nisn');
             $table->date('tanggal_bayar');
             $table->string('belum_dibayar',8);
-            $table->string('bulan_dibayar',8);
+            $table->string('bulan_dibayar',13);
             $table->string('tahun_dibayar',4);
             $table->integer('id_spp');
             $table->integer('jumlah_bayar');

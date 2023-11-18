@@ -17,6 +17,9 @@
     .bruh{
         margin-right: 50px;
     }
+    .oyaa{
+      margin-left:980px; 
+    }
   </style>
 </head>
 
@@ -61,7 +64,10 @@
                             <a class="active" href="posts.html">Data Pembayaran</a>
                         </li>
                         <li>
-                            <a href="{{url('kantambah')}}">tambah Pembayaran</a>
+                            <a href="{{url('siswaspp')}}">Data Spp</a>
+                        </li>
+                        <li>
+                            <a href="#">Tambah Spp</a>
                         </li>
                     </ul>
                 </li> 
@@ -80,9 +86,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                       <li>
-                          <a href="#">
-                            <th>Siswa</th>
-                          </a>
+                          <a href="{{url('siswa')}}">Data Siswa</a>
                       </li>
                   </ul>
                 </li>
@@ -259,9 +263,15 @@
               </div>
             </article>
           </div> --}}
+          <div>
+            <th>Data Pembayaran</th>
+          </div>
+          <div class="oyaa">
+            <div class="btn btn-outline-primary">
+              <a href="{{url('kantambah')}}">Tambah Data</a>
+            </div>
+          </div>
         <div class="row">
-          
-            
             <div class="bruh card">
             <div class="users-table table-wrapper">
               <table class="table table-hover">

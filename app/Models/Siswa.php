@@ -13,4 +13,7 @@ class Siswa extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     protected $guarded = [];
+    public function pembayaran(){
+        return $this->belongsTo(Pembayaran::class);
+    }
 }
