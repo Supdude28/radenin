@@ -20,7 +20,8 @@
   <article class="sign-up">
     <h1 class="sign-up__title">Tambah Data Kelas</h1>
     {{-- <p class="sign-up__subtitle">Jujur lah dengan keadaan yang sekarang</p> --}}
-    <form class="sign-up-form form" action="" method="">
+    <form class="sign-up-form form" action="{{url('kelastambah')}}" method="post">
+      @csrf
       <label class="form-label-wrapper">
         <p class="form-label">Nama Kelas</p>
         <input class="form-input" type="text" name="nama_kelas" placeholder="Masukan nama kelas" required>
@@ -29,7 +30,7 @@
         <p class="form-label">Kompetensi Keahlian</p>
         <input class="form-input" type="text" name="kompetensi_keahlian" placeholder="Masukan kompetensi keahlian" required>
       </label>
-      <a class="form-btn primary-default-btn transparent-btn">Tambah</a>
+      <button class="form-btn primary-default-btn transparent-btn">Tambah</button>
       <a class="form-btn primary-default-btn transparent-btn my-3" href="{{url('kelas') }}">Batal</a><br>
     </form>
   </article>

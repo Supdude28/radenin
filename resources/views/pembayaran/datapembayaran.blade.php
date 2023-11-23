@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data | Kelas</title>
+  <title>Data Pembayaran | SPP</title>
   <!-- Favicon -->
   <link rel="stylesheet" href="/assets/cssboots/bootstrap.css">
   <link rel="shortcut icon" href="/assets/img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
   <link rel="stylesheet" href="assets/css/bootstrap.css">
-
 
   <link rel="stylesheet" href="/assets/css/style.min.css">
   <style>
@@ -19,7 +18,7 @@
         margin-right: 50px;
     }
     .oyaa{
-      margin-left:930px; 
+      margin-left:857px; 
     }
   </style>
 </head>
@@ -62,7 +61,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="{{url('pembayaran')}}">Data Pembayaran</a>
+                            <a class="active" href="posts.html">Data Pembayaran</a>
                         </li>
                         <li>
                             <a href="{{url('siswaspp')}}">Data Spp</a>
@@ -72,6 +71,9 @@
                         </li>
                     </ul>
                 </li> 
+
+
+
 
                 
             </ul>
@@ -91,6 +93,19 @@
                       </li>
                   </ul>
                 </li>
+                  <a class="show-cat-btn" href="##">
+                      <span class="icon user-3" aria-hidden="true"></span>Petugas
+                      <span class="category__btn transparent-btn" title="Open list">
+                          <span class="sr-only">Open list</span>
+                          <span class="icon arrow-down" aria-hidden="true"></span>
+                      </span>
+                  </a>
+                  <ul class="cat-sub-menu">
+                      <li>
+                          <a href="{{url('petugas')}}">Data Petugas</a>
+                      </li>
+                  </ul>
+              </li>
                 <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Kelas
@@ -101,7 +116,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a class="active" href="{{url('kelas')}}">Data Kelas</a>
+                            <a class="" href="{{url('kelas')}}">Data Kelas</a>
                         </li>
                     </ul>
                 </li>
@@ -264,30 +279,102 @@
               </div>
             </article>
           </div> --}}
+          <div>
+            <th>Data Pembayaran</th>
+          </div>
+          {{-- <div class="oyaa">
+            <div class="btn btn-primary">
+              <a href="{{url('kantambah')}}">Tambah Data</a><br>
+            </div>
+          </div> --}}
+          <!-- Button trigger modal -->
           <div class="oyaa">
-            <div class="btn btn-outline-primary">
-              <a href="{{url('tambahkelas')}}">Tambah Data</a>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Tambah Data
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Pembayaran</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <main class="page-center">
+                    <article class="sign-up">
+                      <h1 class="sign-up__title">Tambah Pembayaran</h1>
+                      <p class="sign-up__subtitle">Jujur lah dengan keadaan yang sekarang</p>
+                      <form class="sign-up-form form" action="" method="">
+                        <label class="form-label-wrapper">
+                          <p class="form-label">Nisn</p>
+                          <input class="form-input" type="text" name="" placeholder="Masukan Nisn" required>
+                        </label>
+                        <label for="tanggal_bayar" class="form-label">Tanggal Pembayaran</label>
+                        <input type="date" class="form-control" name="tanggal_bayar" id="tanggal_bayar" placeholder="tanggal_pengaduan">
+                        <label class="form-label-wrapper">
+                          <p class="form-label">Tahun</p>
+                          <input class="form-input" type="text" name="" placeholder="Masukan Tahun Pembayaran" required>
+                        </label>
+                        <label class="form-label-wrapper">
+                          <p class="form-label">Bulan</p>
+                          <input class="form-input" type="text" name="" placeholder="Masukan Bulan Pembayaran" required>
+                        </label>
+                        <label class="form-label-wrapper">
+                          <p class="form-label">Jumlah Bayar</p>
+                          <input class="form-input" type="text" name="" placeholder="Masukan Jumlah Pembayaran" required>
+                        </label>
+                        <label class="form-checkbox-wrapper">
+                          <input class="form-checkbox" type="checkbox" required>
+                          <span class="form-checkbox-label">Remember me next time</span>
+                        </label>
+                        <a class="form-btn primary-default-btn transparent-btn">Tambah</a>
+                      </form>
+                    </article>
+                  </main>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button"  class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="bruh card">
+            <div class="bruh card">
             <div class="users-table table-wrapper">
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Nama Kelas</th>                      
-                    <th scope="col">Kompetensi Keahlian</th>
+                    <th scope="col">Id Pembayaran</th>
+                    <th scope="col">Id Petugas</th>                      
+                    <th scope="col">Nisn</th>
+                    <th scope="col">Tanggal Bayar</th>
+                    <th scope="col">Tahun Bayar</th>
+                    <th scope="col">Bulan Bayar</th>
+                    <th scope="col">Jumlah Bayar</th>
                 </tr>                     
                 </thead>
                 <tbody>
                     <tr>
-                        
+                        @foreach ($au as $item)
+                            <th>{{$item->id_pembayaran}}</th>
+                            <th>{{$item->id_petugas}}</th>
+                            <th>{{$item->nisn}}</th>
+                            <th>{{$item->tanggal_bayar}}</th>
+                            <th>{{$item->tahun_dibayar}}</th>
+                            <th>{{$item->bulan_dibayar}}</th>
+                            <th>{{$item->jumlah_bayar}}</th>
+                        @endforeach
                     </tr>
                 </tbody>
               </table>
-            </div>
           </div>
           </div>
+          
     <!-- ! Footer -->
     <footer class="footer">
   <div class="container footer--flex">
@@ -310,6 +397,8 @@
 <script src="/assets/plugins/feather.min.js"></script>
 <!-- Custom scripts -->
 <script src="assets/js/script.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

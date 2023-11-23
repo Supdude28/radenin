@@ -89,6 +89,20 @@
                   </ul>
                 </li>
                 <li>
+                  <a class="show-cat-btn" href="##">
+                      <span class="icon user-3" aria-hidden="true"></span>Petugas
+                      <span class="category__btn transparent-btn" title="Open list">
+                          <span class="sr-only">Open list</span>
+                          <span class="icon arrow-down" aria-hidden="true"></span>
+                      </span>
+                  </a>
+                  <ul class="cat-sub-menu">
+                      <li>
+                          <a href="{{url('petugas')}}">Data Petugas</a>
+                      </li>
+                  </ul>
+              </li>
+                <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Kelas
                         <span class="category__btn transparent-btn" title="Open list">

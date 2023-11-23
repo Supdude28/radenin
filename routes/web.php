@@ -34,5 +34,11 @@ route::prefix('adminspp')->group(function(){
     route::get('kantambah',[AdminController::class,'tambahi']);
     route::get('siswaspp',[AdminController::class,'sppsiswa']);
     route::get('siswa',[AdminController::class,'datasiswa']);
-    route::get('tambahkelas',[AdminController::class,'tambahclas']);
+
+    Route::get('tambahkelas',[AdminController::class,'tambahkelas']);
+    Route::post('kelastambah',[AdminController::class,'tambahinkelas']);
     
+    route::get('tambahsiswa',[AdminController::class,'tambahsis']);
+    Route::post('tambahkan',[AdminController::class,'tambahkan']);
+
+    Route::get('petugas',[AdminController::class,'petugass']);

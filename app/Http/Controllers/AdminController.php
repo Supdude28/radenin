@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelas;
 use App\Models\Pembayaran;
 use App\Models\Petugas;
 use App\Models\Siswa;
@@ -41,29 +42,62 @@ class AdminController extends Controller
         return back();
     }
     public function kelas(Request $request){
-        return view('admin.kelas');
+        $din = new Kelas();
+        return view('kelas.kelas',['api'=>$din->all()]);
     }
     public function pembayaran(Request $request){
         $din = new Pembayaran();
-        return view('admin.datapembayaran',['au'=>$din->all()]);
+        return view('pembayaran.datapembayaran',['au'=>$din->all()]);
     }
 
     public function tambahi(Request $request){
         
-        return view('admin.tambahpem');
+        return view('pembayaran.tambahpem');
     }
+    public function tambahsis(Request $request){
+        
+        return view('admin.tambahsis');
+    }
+    
     public function sppsiswa(){
         $din = new Spp();
         return view('admin.spp',['ai'=>$din->all()]);
     }
     public function datasiswa(Request $request){
+        $p = new Spp  ();
         $din = new Siswa();
-        return view('admin.datasiswa',['ai'=>$din->all()]);
+        return view("admin.datasiswa",['dataspp'=>$p->all(),'ai'=>$din->all()]);
     }
 
-    public function tambahclas(Request $request){
-        
-        return view('admin.tambahclas');
+    public function tambahkelas(Request $request){
+        return view('kelas.tambahkls');
+    }
+    public function tambahinkelas(Request $request){
+        $k =new Kelas;
+        $k->create([
+
+            'nama_kelas'=>$request->input('nama_kelas'),
+            'kompetensi_keahlian'=>$request->input('kompetensi_keahlian')
+        ]);
+        return view('kelas.tambahkls')->with('pesan','data berhasil ditambahkan');
+    }
+    public function tambahkan(Request $request){
+        $k =new Siswa;
+        $k->create([
+            'nisn'=>$request->input('nisn'),
+            'nis'=>$request->input('nis'),
+            'nama'=>$request->input('nama'),
+            'id_kelas'=>$request->input('id_kelas'),
+            'alamat'=>$request->input('alamat'),
+            'no_telp'=>$request->input('no_telp'),
+            'id_spp'=>$request->input('id_spp')
+            
+        ]);
+        return view("admin.tambahsis")->with('pesan','data berhasil ditambahkan');
+    }
+
+    public function petugass(Request $request){
+        return view('petugas.tambahkls');
     }
     
 }

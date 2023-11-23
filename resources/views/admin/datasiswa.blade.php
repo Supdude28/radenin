@@ -18,6 +18,9 @@
     .bruh{
         margin-right: 50px;
     }
+    .oyaa{
+      margin-left:857px; 
+    }
   </style>
 </head>
 
@@ -88,6 +91,20 @@
                       </li>
                   </ul>
                 </li>
+                <li>
+                  <a class="show-cat-btn" href="##">
+                      <span class="icon user-3" aria-hidden="true"></span>Petugas
+                      <span class="category__btn transparent-btn" title="Open list">
+                          <span class="sr-only">Open list</span>
+                          <span class="icon arrow-down" aria-hidden="true"></span>
+                      </span>
+                  </a>
+                  <ul class="cat-sub-menu">
+                      <li>
+                          <a href="{{url('petugas')}}">Data Petugas</a>
+                      </li>
+                  </ul>
+              </li>
                 <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Kelas
@@ -262,8 +279,14 @@
             </article>
           </div> --}}
           <div>
-            <th>Data Spp</th>
+            <th>Data Siswa</th>
           </div>
+          <div class="oyaa">
+            <div class="btn btn-primary">
+              <a href="{{url('tambahsiswa')}}">Tambah Data</a>
+            </div>
+          </div>
+
           <div class="bruh card">
            
               <table class="table table-hover">
@@ -272,8 +295,11 @@
                     <th scope="col">Nisn</th>
                     <th scope="col">Nis</th>                      
                     <th scope="col">Nama</th>
+                    <th scope="col">Id Kelas</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Telpon</th>
+                    <th scope="col">Id Spp</th>
+                    <th scope="col">Aksi</th>
                 </tr>                     
                 </thead>
                 <tbody>
@@ -283,8 +309,10 @@
                             <td>{{$item->nisn}}</td>
                             <td>{{$item->nis}}</td>
                             <td>{{$item->nama}}</td>
+                            <td>{{$item->id_kelas}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->no_telp}}</td>
+                            <td>{{$item->id_spp}}</td>
                           </tr>
                       @endforeach
                     </tr>
@@ -315,6 +343,7 @@
 <script src="/assets/plugins/feather.min.js"></script>
 <!-- Custom scripts -->
 <script src="assets/js/script.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 </body>
 
 </html>

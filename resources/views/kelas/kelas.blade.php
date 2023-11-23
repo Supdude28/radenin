@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Pembayaran | SPP</title>
+  <title>Data | Kelas</title>
   <!-- Favicon -->
   <link rel="stylesheet" href="/assets/cssboots/bootstrap.css">
   <link rel="shortcut icon" href="/assets/img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
   <link rel="stylesheet" href="assets/css/bootstrap.css">
+
 
   <link rel="stylesheet" href="/assets/css/style.min.css">
   <style>
@@ -18,7 +19,7 @@
         margin-right: 50px;
     }
     .oyaa{
-      margin-left:980px; 
+      margin-left:858px; 
     }
   </style>
 </head>
@@ -61,7 +62,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a class="active" href="posts.html">Data Pembayaran</a>
+                            <a href="{{url('pembayaran')}}">Data Pembayaran</a>
                         </li>
                         <li>
                             <a href="{{url('siswaspp')}}">Data Spp</a>
@@ -90,6 +91,19 @@
                       </li>
                   </ul>
                 </li>
+                  <a class="show-cat-btn" href="##">
+                      <span class="icon user-3" aria-hidden="true"></span>Petugas
+                      <span class="category__btn transparent-btn" title="Open list">
+                          <span class="sr-only">Open list</span>
+                          <span class="icon arrow-down" aria-hidden="true"></span>
+                      </span>
+                  </a>
+                  <ul class="cat-sub-menu">
+                      <li>
+                          <a href="{{url('petugass')}}">Data Petugas</a>
+                      </li>
+                  </ul>
+              </li>
                 <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon document" aria-hidden="true"></span>Kelas
@@ -100,7 +114,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a class="" href="{{url('kelas')}}">Data Kelas</a>
+                            <a class="active" href="{{url('kelas')}}">Data Kelas</a>
                         </li>
                     </ul>
                 </li>
@@ -263,47 +277,36 @@
               </div>
             </article>
           </div> --}}
-          <div>
-            <th>Data Pembayaran</th>
-          </div>
           <div class="oyaa">
-            <div class="btn btn-outline-primary">
-              <a href="{{url('kantambah')}}">Tambah Data</a>
+            <div class="btn btn-primary">
+              <a href="{{url('tambahkelas')}}" class="bi bi-plus-circle">Tambah Data</a>
             </div>
           </div>
-        <div class="row">
-            <div class="bruh card">
+          <div class="bruh card">
             <div class="users-table table-wrapper">
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Id Pembayaran</th>
-                    <th scope="col">Id Petugas</th>                      
-                    <th scope="col">Nisn</th>
-                    <th scope="col">Tanggal Bayar</th>
-                    <th scope="col">Tahun Bayar</th>
-                    <th scope="col">Bulan Bayar</th>
-                    <th scope="col">Jumlah Bayar</th>
+                    <th scope="col">Id kelas</th>
+                    <th scope="col">Nama Kelas</th>                      
+                    <th scope="col">Kompetensi Keahlian</th>
                 </tr>                     
                 </thead>
                 <tbody>
                     <tr>
-                        @foreach ($au as $item)
-                            <th>{{$item->id_pembayaran}}</th>
-                            <th>{{$item->id_petugas}}</th>
-                            <th>{{$item->nisn}}</th>
-                            <th>{{$item->tanggal_bayar}}</th>
-                            <th>{{$item->tahun_dibayar}}</th>
-                            <th>{{$item->bulan_dibayar}}</th>
-                            <th>{{$item->jumlah_bayar}}</th>
-                        @endforeach
+                      @foreach ($api as $item)
+                      <tr>
+                        <td>{{$item->id_kelas}}</td>
+                        <td>{{$item->nama_kelas}}</td>
+                        <td>{{$item->kompetensi_keahlian}}</td>
+                      </tr>
+                  @endforeach
                     </tr>
                 </tbody>
               </table>
             </div>
           </div>
           </div>
-          
     <!-- ! Footer -->
     <footer class="footer">
   <div class="container footer--flex">
