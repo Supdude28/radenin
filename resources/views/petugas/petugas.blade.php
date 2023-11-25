@@ -19,7 +19,7 @@
         margin-right: 50px;
     }
     .oyaa{
-      margin-left:857px; 
+      margin-left:933px; 
     }
   </style>
 </head>

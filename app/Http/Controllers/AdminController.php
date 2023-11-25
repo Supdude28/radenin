@@ -12,9 +12,8 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function dashboard(){
-        $din = new Pembayaran();
         $din = new Siswa();
-        return view('admin.dashboard',['ui'=>$din->all()]);
+        return view('admin.dashboard',['ai'=>$din->all()]);
 
         
     }
@@ -55,18 +54,33 @@ class AdminController extends Controller
         return view('pembayaran.tambahpem');
     }
     public function tambahsis(Request $request){
-        
-        return view('admin.tambahsis');
+        $si  = new Siswa();
+        $man = new kelas();
+        $mak = new spp();
+        return view('admin.tambahsis',['dataspp'=>$mak->all(),'data'=>$man->all(),'si'=>$si->all()]);
     }
     
     public function sppsiswa(){
         $din = new Spp();
-        return view('admin.spp',['ai'=>$din->all()]);
+        return view('spp.spp',['ai'=>$din->all()]);
+    }
+    public function tambahspp(Request $request){
+        return view('spp.spptambah');
+    }
+    public function tambahispp(Request $request){
+        $uk = new Spp();
+        $uk ->create([
+            'id_spp'=>$request->input('id_spp'),
+            'tahun'=>$request->input('tahun'),
+            'nominal'=>$request->input('nominal')
+        ]);
+        return view('spp.spptambah')->with('pesan','data berhasil di tambahkan');
     }
     public function datasiswa(Request $request){
+        $kk = new Kelas();
         $p = new Spp  ();
         $din = new Siswa();
-        return view("admin.datasiswa",['dataspp'=>$p->all(),'ai'=>$din->all()]);
+        return view("admin.datasiswa",['dataspp'=>$p->all(),'ai'=>$din->all(),'kk'=>$kk->all()]);
     }
 
     public function tambahkelas(Request $request){
@@ -82,17 +96,12 @@ class AdminController extends Controller
         return view('kelas.tambahkls')->with('pesan','data berhasil ditambahkan');
     }
     public function tambahkan(Request $request){
-        $k =new Siswa;
-        $k->create([
-            'nisn'=>$request->input('nisn'),
-            'nis'=>$request->input('nis'),
-            'nama'=>$request->input('nama'),
-            'id_kelas'=>$request->input('id_kelas'),
-            'alamat'=>$request->input('alamat'),
-            'no_telp'=>$request->input('no_telp'),
-            'id_spp'=>$request->input('id_spp')
+
+         $r = $request->validate([
             
-        ]);
+         ]);
+        $k =new Siswa;
+        $k->create($request->all());
         return view("admin.tambahsis")->with('pesan','data berhasil ditambahkan');
     }
 

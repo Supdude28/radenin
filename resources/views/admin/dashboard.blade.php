@@ -288,7 +288,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                      @foreach ($ui as $item)
+                      @foreach ($ai as $item)
                           <tr>
                             <td>{{$item->nisn}}</td>
                             <td>{{$item->nama}}</td>

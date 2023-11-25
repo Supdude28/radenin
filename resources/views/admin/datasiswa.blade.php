@@ -19,7 +19,7 @@
         margin-right: 50px;
     }
     .oyaa{
-      margin-left:857px; 
+      margin-left:933px; 
     }
   </style>
 </head>
@@ -295,10 +295,10 @@
                     <th scope="col">Nisn</th>
                     <th scope="col">Nis</th>                      
                     <th scope="col">Nama</th>
-                    <th scope="col">Id Kelas</th>
+                    <th scope="col">Kelas</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Telpon</th>
-                    <th scope="col">Id Spp</th>
+                    <th scope="col">Spp</th>
                     <th scope="col">Aksi</th>
                 </tr>                     
                 </thead>
@@ -309,10 +309,10 @@
                             <td>{{$item->nisn}}</td>
                             <td>{{$item->nis}}</td>
                             <td>{{$item->nama}}</td>
-                            <td>{{$item->id_kelas}}</td>
+                            <td>{{$item->kelas->nama_kelas}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->no_telp}}</td>
-                            <td>{{$item->id_spp}}</td>
+                            <td>{{$item->spp->tahun}}-{{$item->nominal}}</td>
                           </tr>
                       @endforeach
                     </tr>

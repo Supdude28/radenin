@@ -12,4 +12,8 @@ class Kelas extends Model
     protected $primaryKey = 'id_kelas';
     public $incrementing = false;
     protected $guarded = [];
+
+    public function siswa(){
+        return $this->hasMany(Siswa::class,'id_kelas','id_kelas');
+    }
 }

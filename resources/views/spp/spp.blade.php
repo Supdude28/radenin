@@ -18,6 +18,9 @@
     .bruh{
         margin-right: 50px;
     }
+    .oyaa{
+      margin-left:933px; 
+    }
   </style>
 </head>
 
@@ -277,6 +280,11 @@
           </div> --}}
           <div>
             <th>Data Spp</th>
+          </div>
+          <div class="oyaa">
+            <div class="btn btn-primary">
+              <a href="{{url('tambahspp')}}" class="bi bi-plus-circle">Tambah Data</a>
+            </div>
           </div>
           <div class="bruh card">
            
