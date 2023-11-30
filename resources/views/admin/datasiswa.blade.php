@@ -304,7 +304,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                    @foreach ($ai as $item)
+                    @foreach ($data  as $item)
                           <tr>
                             <td>{{$item->nisn}}</td>
                             <td>{{$item->nis}}</td>
@@ -312,7 +312,7 @@
                             <td>{{$item->kelas->nama_kelas}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->no_telp}}</td>
-                            <td>{{$item->spp->tahun}}-{{$item->nominal}}</td>
+                            <td>{{$item->tahun}}-{{$item->nominal}}</td>
                           </tr>
                       @endforeach
                     </tr>

@@ -77,10 +77,8 @@ class AdminController extends Controller
         return view('spp.spptambah')->with('pesan','data berhasil di tambahkan');
     }
     public function datasiswa(Request $request){
-        $kk = new Kelas();
-        $p = new Spp  ();
         $din = new Siswa();
-        return view("admin.datasiswa",['dataspp'=>$p->all(),'ai'=>$din->all(),'kk'=>$kk->all()]);
+        return view("admin.datasiswa",['data'=>$din->with('kelas')->with('spp')->get()]);
     }
 
     public function tambahkelas(Request $request){
@@ -98,7 +96,13 @@ class AdminController extends Controller
     public function tambahkan(Request $request){
 
          $r = $request->validate([
-            
+            'nisn' => 'required|max:10',
+            'nis' => 'required|max:8',
+            'nama' => 'required|max:36',
+            'id_kelas' => 'required',
+            'alamat' => 'required',
+            'no_telp' => 'required|max:13',
+            'id_spp' => 'required'
          ]);
         $k =new Siswa;
         $k->create($request->all());
