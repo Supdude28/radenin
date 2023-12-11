@@ -18,32 +18,34 @@
   <div class="layer"></div>
 <main class="page-center">
   <article class="sign-up">
-    <h1 class="sign-up__title">Tambah Pembayaran</h1>
+    <h1 class="sign-up__title">Tambah Petugas</h1>
     <p class="sign-up__subtitle">Jujur lah dengan keadaan yang sekarang</p>
-    <form class="sign-up-form form" action="" method="">
-      <label class="form-label-wrapper">
-        <p class="form-label">Nisn</p>
-        <input class="form-input" type="text" name="" placeholder="Masukan Nisn" required>
-      </label>
-      <label for="tanggal_bayar" class="form-label">Tanggal Pembayaran</label>
-      <input type="date" class="form-control" name="tanggal_bayar" id="tanggal_bayar" placeholder="tanggal_pengaduan">
-      <label class="form-label-wrapper">
-        <p class="form-label">Tahun</p>
-        <input class="form-input" type="text" name="" placeholder="Masukan Tahun Pembayaran" required>
-      </label>
-      <label class="form-label-wrapper">
-        <p class="form-label">Bulan</p>
-        <input class="form-input" type="text" name="" placeholder="Masukan Bulan Pembayaran" required>
-      </label>
-      <label class="form-label-wrapper">
-        <p class="form-label">Jumlah Bayar</p>
-        <input class="form-input" type="text" name="" placeholder="Masukan Jumlah Pembayaran" required>
-      </label>
-      <label class="form-checkbox-wrapper">
-        <input class="form-checkbox" type="checkbox" required>
-        <span class="form-checkbox-label">Remember me next time</span>
-      </label>
-      <a class="form-btn primary-default-btn transparent-btn">Tambah</a>
+    <form class="sign-up-form form" action="" method="POST">
+      @csrf
+      <div class="modal-body">
+        <div class="mb-3">
+            <label for="nama_petugas" class="form-label">Nama Petugas</label>
+            <input type="text" class="form-control" name="nama_petugas" id="nama_petugas">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="username">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <div class="mb-3">
+            <label for="level" class="form-label">Level</label>
+            <select class="form-select my-2" name="level">
+                <option value="admin">Admin</option>
+                <option value="petugas">Petugas</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Simpan</button>
+    </div>
       <a class="form-btn primary-default-btn transparent-btn my-3" href="{{url('adminspp') }}">Batal</a><br>
     </form>
   </article>

@@ -41,7 +41,8 @@ route::prefix('adminspp')->group(function(){
     Route::post('tambahkan',[AdminController::class,'tambahkan']);
     
     Route::get('petugas',[AdminController::class,'petugass']);
-    
+    route::get('petugastambah',[AdminController::class,'petugastambah']);
+
     route::get('siswaspp',[AdminController::class,'sppsiswa']);
 
     route::get('tambahspp',[AdminController::class,'tambahspp']);

@@ -110,7 +110,12 @@ class AdminController extends Controller
     }
 
     public function petugass(Request $request){
-        return view('petugas.tambahkls');
+        return view('petugas.petugas');
     }
-    
+    public function petugastambah(Request $request){
+        $data = new Petugas();
+        
+        $data->create($request->all());
+        return view("petugas.tambahpetugas")->with("pesan","data berhasil di tambahkan");
+    }
 }

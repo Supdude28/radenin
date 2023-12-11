@@ -283,7 +283,7 @@
           </div>
           <div class="oyaa">
             <div class="btn btn-primary">
-              <a href="{{url('tambahsiswa')}}">Tambah Data</a>
+              <a href="{{url('petugastambah')}}">Tambah Data</a>
             </div>
           </div>
 
