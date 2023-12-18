@@ -51,26 +51,13 @@
                 <li>
                     <a href="{{url('adminspp')}}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
-                <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>Posts
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
-                        </span>
-                    </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a class="active" href="posts.html">Data Pembayaran</a>
-                        </li>
-                        <li>
-                            <a href="{{url('siswaspp')}}">Data Spp</a>
-                        </li>
-                        <li>
-                            <a href="#">Tambah Spp</a>
-                        </li>
-                    </ul>
-                </li> 
+
+              <li>
+                  <a class="active"{{url('pembayaran')}}">Data Pembayaran</a>
+              </li>
+              <li>
+                  <a href="{{url('siswaspp')}}">Data Spp</a>
+              </li>
 
 
 
@@ -290,60 +277,13 @@
           <!-- Button trigger modal -->
           <div class="oyaa">
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a href="{{url('/kantambah')}}" class="btn btn-primary" >
               Tambah Data
-            </button>
+            </a>
           </div>
 
           <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Pembayaran</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <main class="page-center">
-                    <article class="sign-up">
-                      <h1 class="sign-up__title">Tambah Pembayaran</h1>
-                      <p class="sign-up__subtitle">Jujur lah dengan keadaan yang sekarang</p>
-                      <form class="sign-up-form form" action="" method="">
-                        <label class="form-label-wrapper">
-                          <p class="form-label">Nisn</p>
-                          <input class="form-input" type="text" name="" placeholder="Masukan Nisn" required>
-                        </label>
-                        <label for="tanggal_bayar" class="form-label">Tanggal Pembayaran</label>
-                        <input type="date" class="form-control" name="tanggal_bayar" id="tanggal_bayar" placeholder="tanggal_pengaduan">
-                        <label class="form-label-wrapper">
-                          <p class="form-label">Tahun</p>
-                          <input class="form-input" type="text" name="" placeholder="Masukan Tahun Pembayaran" required>
-                        </label>
-                        <label class="form-label-wrapper">
-                          <p class="form-label">Bulan</p>
-                          <input class="form-input" type="text" name="" placeholder="Masukan Bulan Pembayaran" required>
-                        </label>
-                        <label class="form-label-wrapper">
-                          <p class="form-label">Jumlah Bayar</p>
-                          <input class="form-input" type="text" name="" placeholder="Masukan Jumlah Pembayaran" required>
-                        </label>
-                        <label class="form-checkbox-wrapper">
-                          <input class="form-checkbox" type="checkbox" required>
-                          <span class="form-checkbox-label">Remember me next time</span>
-                        </label>
-                        <a class="form-btn primary-default-btn transparent-btn">Tambah</a>
-                      </form>
-                    </article>
-                  </main>
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button"  class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          
             <div class="bruh card">
             <div class="users-table table-wrapper">
               <table class="table table-hover">

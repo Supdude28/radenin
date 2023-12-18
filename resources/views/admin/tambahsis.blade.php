@@ -35,7 +35,7 @@
         <input class="form-input" type="text" name="nama" placeholder="Masukan nama kelas" required>
       </label>
       <div class="form-label">
-        <label class="form-label-wrapper">Id Spp</label>
+        <label class="form-label-wrapper">Nama Kelas</label>
         <select class="form-select" name="form-input" aria-label="Default select example" name="id_spp" id="">
           @foreach ($data as $item)
               <option value="{{$item->id_kelas}}">{{$item->nama_kelas}}-{{$item->kompetensi_keahlian}}</option>
@@ -51,7 +51,7 @@
         <input class="form-input" type="text" name="no_telp" placeholder="Masukan nama kelas" required>
       </label>
       <div class="form-label">
-          <label class="form-label-wrapper">Id Spp</label>
+          <label class="form-label-wrapper">Nominal Dan Tahun</label>
           <select class="form-select" name="form-input" aria-label="Default select example" name="id_spp" id="">
             @foreach ($dataspp as $item)
                 <option value="{{$item->id_spp}}">{{$item->tahun}}-{{$item->nominal}}</option>

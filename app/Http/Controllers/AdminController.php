@@ -18,28 +18,11 @@ class AdminController extends Controller
         
     }
 
-    public function loginadmin(){
-        return view('admin.signin');
-    }
+    
     public function registrasiadmin(){
         return view('admin.signup');
     }
-    public function cekloginadmin(Request $request){
-        $m = new Petugas();
-        // cek username dan password
-        $m = $m->where('username',$request->input('username'))->where('password',$request->input('password'));
-
-        if($m->exists()){
-            session([
-                'username'=> $request->input('username'),
-                'password'=> $request->input('password')
-            ]);
-            return redirect('/adminspp');
-
-        }
-        
-        return back();
-    }
+    
     public function kelas(Request $request){
         $din = new Kelas();
         return view('kelas.kelas',['api'=>$din->all()]);
@@ -49,14 +32,39 @@ class AdminController extends Controller
         return view('pembayaran.datapembayaran',['au'=>$din->all()]);
     }
 
-    public function tambahi(Request $request){
-        
-        return view('pembayaran.tambahpem');
+    public function kantambah(Request $request){
+        // $r = $request->validate([
+        //     'id_petugas' => 'required',
+        //     'nisn' => 'required|max:10',
+        //     'tanggal_bayar' => 'required',
+        //     'tahun_bayar' => 'required',
+        //     'bulan_dibayar' => 'required',
+        //     'jumlah_bayar' => 'required|max:13'
+        //  ]);
+        // $k =new Siswa;
+        // $k->create($request->all());
+        // return view("pembayaran.tambahpem")->with('pesan','data berhasil ditambahkan');
+        return view("pembayaran.tambahpem");
     }
+
+    public function tambahi(Request $request){
+      $r = $request->validate([
+            'id_petugas' => 'required',
+            'nisn' => 'required|max:10',
+            'tanggal_bayar' => 'required',
+            'tahun_bayar' => 'required',
+            'bulan_dibayar' => 'required',
+            'jumlah_bayar' => 'required|max:13'
+         ]);
+        $k =new Siswa;
+        $k->create($request->all());
+        return view("pembayaran.tambahpem")->with('pesan','data berhasil ditambahkan');  
+    }
+
     public function tambahsis(Request $request){
-        $si  = new Siswa();
-        $man = new kelas();
-        $mak = new spp();
+        $si  = new Siswa;
+        $man = new kelas;
+        $mak = new spp;
         return view('admin.tambahsis',['dataspp'=>$mak->all(),'data'=>$man->all(),'si'=>$si->all()]);
     }
     
@@ -111,7 +119,7 @@ class AdminController extends Controller
 
     public function petugass(Request $request){
         return view('petugas.petugas');
-    }
+    } 
     public function petugastambah(Request $request){
         $data = new Petugas();
         

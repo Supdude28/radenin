@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,14 +25,17 @@ Route::get('/', function () {
 
 route::prefix('adminspp')->group(function(){
     Route::get('/',[AdminController::class,'dashboard']);
-        route::get('/loginadmin',[AdminController::class,'loginadmin']);
-        route::post('/loginadmin',[AdminController::class,'cekloginadmin']);
-        route::get('logoutadmin',[AdminController::class,'logoutadmin']);
+        route::get('/loginadmin',[Login::class,'loginadmin']);
+        route::post('/loginadmin',[Login::class,'cekloginadmin']);
+        route::get('logoutadmin',[Login::class,'logoutadmin']);
     });
     route::get('registrasiadmin',[AdminController::class,'registrasiadmin']);
     route::get('kelas',[AdminController::class,'kelas']);
+
     route::get('pembayaran',[AdminController::class,'pembayaran']);
-    route::get('kantambah',[AdminController::class,'tambahi']);
+    route::get('kantambah',[AdminController::class,'kantambah']);
+    route::post('tambahi',[AdminController::class,'tambahi']);
+    
     route::get('siswa',[AdminController::class,'datasiswa']);
     
     Route::get('tambahkelas',[AdminController::class,'tambahkelas']);

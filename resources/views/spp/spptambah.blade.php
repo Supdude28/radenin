@@ -32,11 +32,8 @@
         <input class="form-input" type="text" name="nominal" placeholder="Masukan Nominal spp" required>
       </label>
       
-      <label class="form-checkbox-wrapper">
-        <input class="form-checkbox" type="checkbox" required>
-        <span class="form-checkbox-label">Remember me next time</span>
-      </label>
-      <button class="form-btn primary-default-btn transparent-btn">Sign in</button>
+      <button class="form-btn primary-default-btn transparent-btn">Tambah</button><br>
+      <a class="form-btn primary-default-btn transparent-btn" href="{{url('siswaspp')}}">Kembali</a>
     </form>
   </article>
 </main>

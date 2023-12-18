@@ -53,25 +53,11 @@
                     <a href="{{url('adminspp')}}"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon document" aria-hidden="true"></span>Posts
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
-                        </span>
-                    </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a href="{{url('pembayaran')}}">Data Pembayaran</a>
-                        </li>
-                        <li>
-                            <a href="{{url('siswaspp')}}">Data Spp</a>
-                        </li>
-                        <li>
-                            <a href="#">Tambah Spp</a>
-                        </li>
-                    </ul>
-                </li> 
+                  <a href="{{url('pembayaran')}}">Data Pembayaran</a>
+              </li>
+              <li>
+                  <a href="{{url('siswaspp')}}">Data Spp</a>
+              </li> 
 
                 
             </ul>
